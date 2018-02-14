@@ -1,0 +1,23 @@
+PODS:
+  - Alamofire (4.5.0)
+  - DateToolsSwift (2.0.3)
+  - SDWebImage (4.0.0):
+    - SDWebImage/Core (= 4.0.0)
+  - SDWebImage/Core (4.0.0)
+  - TPKeyboardAvoiding (1.3.1)
+
+DEPENDENCIES:
+  - Alamofire
+  - DateToolsSwift
+  - SDWebImage
+  - TPKeyboardAvoiding
+
+SPEC CHECKSUMS:
+  Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
+  DateToolsSwift: bf69bf9056d9e53c5c03f06e51f219b9b8b02f9e
+  SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
+  TPKeyboardAvoiding: 0d6af20e95e2850f4c621841225b59ec7d8dd852
+
+PODFILE CHECKSUM: 721929e0a8848f81c853189848cb1206af5e3088
+
+COCOAPODS: 1.4.0
