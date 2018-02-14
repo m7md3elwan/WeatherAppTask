@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina3_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WeatherEmptyView" customModule="WeatherAppTask" customModuleProvider="target">
+            <connections>
+                <outlet property="activityIndicator" destination="7ps-GF-YNN" id="jBD-d8-ubl"/>
+                <outlet property="button" destination="Rrf-Ix-vpZ" id="vpy-8l-1yW"/>
+                <outlet property="imageView" destination="FoP-Xp-bJk" id="M5U-yY-X5V"/>
+                <outlet property="textLabel" destination="Z5W-5X-8G5" id="9ze-gR-TGa"/>
+                <outlet property="titleLabel" destination="rFk-Ss-Xzh" id="P9M-4G-b0Q"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="NeB-L7-Nb1" userLabel="contentView">
+                    <rect key="frame" x="10" y="63.5" width="300" height="353"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalCompressionResistancePriority="500" verticalCompressionResistancePriority="500" placeholderIntrinsicWidth="180" placeholderIntrinsicHeight="180" translatesAutoresizingMaskIntoConstraints="NO" id="FoP-Xp-bJk">
+                            <rect key="frame" x="60" y="10" width="180" height="180"/>
+                        </imageView>
+                        <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="7ps-GF-YNN">
+                            <rect key="frame" x="131.5" y="81.5" width="37" height="37"/>
+                            <color key="color" cocoaTouchSystemColor="darkTextColor"/>
+                        </activityIndicatorView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="750" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rFk-Ss-Xzh" userLabel="Title">
+                            <rect key="frame" x="0.0" y="220" width="300" height="21"/>
+                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                            <color key="textColor" red="0.043137254899999998" green="0.039215686270000001" blue="0.047058823530000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="750" text="Text" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z5W-5X-8G5" userLabel="Text">
+                            <rect key="frame" x="0.0" y="251" width="300" height="18"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <color key="textColor" red="0.30196078430000001" green="0.29411764709999999" blue="0.32549019610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rrf-Ix-vpZ">
+                            <rect key="frame" x="80" y="299" width="140" height="44"/>
+                            <color key="backgroundColor" red="0.2834388316" green="0.76437360050000003" blue="0.84907656909999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="44" id="hSb-yo-Suq"/>
+                                <constraint firstAttribute="width" constant="140" identifier="button with" id="xFq-Bx-Yvr"/>
+                                <constraint firstAttribute="height" constant="44" identifier="button height" id="yKZ-uU-voA"/>
+                            </constraints>
+                            <state key="normal" title="Try Again">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <variation key="default">
+                                <mask key="constraints">
+                                    <exclude reference="hSb-yo-Suq"/>
+                                </mask>
+                            </variation>
+                            <connections>
+                                <action selector="ctaButtonClicked:" destination="-1" eventType="touchUpInside" id="jZ9-6k-An8"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="Rrf-Ix-vpZ" secondAttribute="bottom" constant="10" identifier="button to superview" id="5sr-xQ-UV2"/>
+                        <constraint firstItem="FoP-Xp-bJk" firstAttribute="centerX" secondItem="NeB-L7-Nb1" secondAttribute="centerX" id="5tw-vN-4rL"/>
+                        <constraint firstItem="Z5W-5X-8G5" firstAttribute="leading" secondItem="NeB-L7-Nb1" secondAttribute="leadingMargin" id="Egp-ik-4fa"/>
+                        <constraint firstItem="FoP-Xp-bJk" firstAttribute="top" secondItem="NeB-L7-Nb1" secondAttribute="top" constant="10" id="JLd-7a-laf"/>
+                        <constraint firstAttribute="width" constant="300" identifier="width constraint" id="URT-Sg-mci"/>
+                        <constraint firstAttribute="trailingMargin" secondItem="rFk-Ss-Xzh" secondAttribute="trailing" id="W2M-2d-rAM"/>
+                        <constraint firstItem="7ps-GF-YNN" firstAttribute="centerY" secondItem="FoP-Xp-bJk" secondAttribute="centerY" id="aEP-07-XP8"/>
+                        <constraint firstItem="Rrf-Ix-vpZ" firstAttribute="top" secondItem="Z5W-5X-8G5" secondAttribute="bottom" constant="30" identifier="text to button" id="bIz-3X-Prq"/>
+                        <constraint firstAttribute="trailingMargin" secondItem="Z5W-5X-8G5" secondAttribute="trailing" id="cCz-9t-RgB"/>
+                        <constraint firstItem="7ps-GF-YNN" firstAttribute="centerX" secondItem="FoP-Xp-bJk" secondAttribute="centerX" id="iix-vH-fRK"/>
+                        <constraint firstItem="Rrf-Ix-vpZ" firstAttribute="centerX" secondItem="NeB-L7-Nb1" secondAttribute="centerX" id="jze-VT-ypi"/>
+                        <constraint firstAttribute="bottom" secondItem="Z5W-5X-8G5" secondAttribute="bottom" priority="999" identifier="Optional text to super view" id="nC4-5Z-bnD"/>
+                        <constraint firstItem="rFk-Ss-Xzh" firstAttribute="top" secondItem="FoP-Xp-bJk" secondAttribute="bottom" constant="30" identifier="image to title" id="wOq-he-DRc"/>
+                        <constraint firstItem="rFk-Ss-Xzh" firstAttribute="leading" secondItem="NeB-L7-Nb1" secondAttribute="leadingMargin" id="wZI-jZ-csB"/>
+                        <constraint firstItem="Z5W-5X-8G5" firstAttribute="top" secondItem="rFk-Ss-Xzh" secondAttribute="bottom" constant="10" identifier="title to text" id="yWb-V1-hqv"/>
+                    </constraints>
+                    <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="0.0" right="0.0"/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="NeB-L7-Nb1" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="die-7h-UWS"/>
+                <constraint firstItem="NeB-L7-Nb1" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="fyw-qO-Hx4"/>
+            </constraints>
+        </view>
+    </objects>
+</document>

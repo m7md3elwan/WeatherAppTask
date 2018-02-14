@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Splash View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="SplashViewController" customModule="WeatherAppTask" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8YW-6k-CBy" customClass="ParentLogoView" customModule="WeatherAppTask" customModuleProvider="target">
+                                <rect key="frame" x="87.5" y="288.5" width="200" height="90"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="7wg-rK-Baz"/>
+                                    <constraint firstAttribute="height" constant="90" id="a2H-Xn-3V0"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="8YW-6k-CBy" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="QXC-ea-OTi"/>
+                            <constraint firstItem="8YW-6k-CBy" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Qca-sB-HVx"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="logoView" destination="8YW-6k-CBy" id="eMX-La-z04"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-76" y="110"/>
+        </scene>
+        <!--Cities-->
+        <scene sceneID="iae-Ws-Zca">
+            <objects>
+                <viewController storyboardIdentifier="WeatherMainActivityViewController" title="Cities" automaticallyAdjustsScrollViewInsets="NO" id="yzs-1Y-4TV" customClass="WeatherMainActivityViewController" customModule="WeatherAppTask" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="yk5-lZ-h0l">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="oXE-fJ-Mcb">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CityNameTableViewCell" rowHeight="98" id="7bq-Hb-GCZ" userLabel="cityCell" customClass="CityNameTableViewCell" customModule="WeatherAppTask" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="98"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7bq-Hb-GCZ" id="3FK-dq-1d5">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="97.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K8a-Q4-lZG" userLabel="weatherWidget" customClass="CityWeatherWidget" customModule="WeatherAppTask" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="97.5"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </view>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstItem="K8a-Q4-lZG" firstAttribute="leading" secondItem="3FK-dq-1d5" secondAttribute="leading" id="5sE-Jk-Jai"/>
+                                                <constraint firstAttribute="trailing" secondItem="K8a-Q4-lZG" secondAttribute="trailing" id="Id8-N8-vAM"/>
+                                                <constraint firstItem="K8a-Q4-lZG" firstAttribute="top" secondItem="3FK-dq-1d5" secondAttribute="top" id="jca-d3-tIg"/>
+                                                <constraint firstAttribute="bottom" secondItem="K8a-Q4-lZG" secondAttribute="bottom" id="svL-xh-q4g"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="weatherWidget" destination="K8a-Q4-lZG" id="Wkp-q5-wBM"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="wWP-Tf-Sns" firstAttribute="trailing" secondItem="oXE-fJ-Mcb" secondAttribute="trailing" id="LrV-ug-TcQ"/>
+                            <constraint firstItem="oXE-fJ-Mcb" firstAttribute="leading" secondItem="wWP-Tf-Sns" secondAttribute="leading" id="i7S-iu-UC9"/>
+                            <constraint firstItem="oXE-fJ-Mcb" firstAttribute="top" secondItem="wWP-Tf-Sns" secondAttribute="top" id="s4z-5Q-bTA"/>
+                            <constraint firstItem="wWP-Tf-Sns" firstAttribute="bottom" secondItem="oXE-fJ-Mcb" secondAttribute="bottom" id="tHR-jN-n01"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="wWP-Tf-Sns"/>
+                    </view>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="always" id="aaN-nf-zYf"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <connections>
+                        <outlet property="tableView" destination="oXE-fJ-Mcb" id="ktc-yX-VUe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kkO-K9-7b4" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="652" y="107"/>
+        </scene>
+        <!--Weather Forecast View Controller-->
+        <scene sceneID="YrM-hm-ZwM">
+            <objects>
+                <viewController storyboardIdentifier="WeatherForecastViewController" id="g88-DE-06v" customClass="WeatherForecastViewController" customModule="WeatherAppTask" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0X6-bt-KAN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" placeholderIntrinsicWidth="infinite" placeholderIntrinsicHeight="90" translatesAutoresizingMaskIntoConstraints="NO" id="pI7-Re-lNB" userLabel="weatherWidget" customClass="CityWeatherWidget" customModule="WeatherAppTask" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="20" width="375" height="90"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="o3c-Nc-Xit">
+                                <rect key="frame" x="0.0" y="110" width="375" height="557"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="4" minimumInteritemSpacing="3" id="EOy-hd-7pD">
+                                    <size key="itemSize" width="173" height="169"/>
+                                    <size key="headerReferenceSize" width="40" height="55"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="10" minY="4" maxX="10" maxY="4"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ForecastCollectionViewCell" id="0p9-Qg-Zdn" customClass="ForecastCollectionViewCell" customModule="WeatherAppTask" customModuleProvider="target">
+                                        <rect key="frame" x="10" y="59" width="173" height="169"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="173" height="169"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k60-9f-3Yl" customClass="ForecastWidget" customModule="WeatherAppTask" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="173" height="169"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </view>
+                                            </subviews>
+                                        </view>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="k60-9f-3Yl" secondAttribute="bottom" id="9C8-kN-Rro"/>
+                                            <constraint firstItem="k60-9f-3Yl" firstAttribute="leading" secondItem="0p9-Qg-Zdn" secondAttribute="leading" id="hev-IO-EBd"/>
+                                            <constraint firstItem="k60-9f-3Yl" firstAttribute="top" secondItem="0p9-Qg-Zdn" secondAttribute="top" id="wnh-zH-tvZ"/>
+                                            <constraint firstAttribute="trailing" secondItem="k60-9f-3Yl" secondAttribute="trailing" id="wyP-rr-ynk"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="forecastWidget" destination="k60-9f-3Yl" id="uuF-AH-cdf"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="ForecastHeaderCollectionViewCell" id="SWW-Lh-cRz" customClass="ForecastDayCollectionReusableView" customModule="WeatherAppTask" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="55"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9au-rM-mc1" customClass="DayWidget" customModule="WeatherAppTask" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="55"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </view>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="9au-rM-mc1" secondAttribute="trailing" id="0Op-3s-gIH"/>
+                                        <constraint firstItem="9au-rM-mc1" firstAttribute="leading" secondItem="SWW-Lh-cRz" secondAttribute="leading" id="6At-Ha-Bf6"/>
+                                        <constraint firstItem="9au-rM-mc1" firstAttribute="top" secondItem="SWW-Lh-cRz" secondAttribute="top" id="9GY-Uh-seb"/>
+                                        <constraint firstAttribute="bottom" secondItem="9au-rM-mc1" secondAttribute="bottom" id="RRi-Yy-IsJ"/>
+                                    </constraints>
+                                    <connections>
+                                        <outlet property="dayWidget" destination="9au-rM-mc1" id="s8o-Gb-G5G"/>
+                                    </connections>
+                                </collectionReusableView>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="VVj-XW-aLJ" firstAttribute="top" secondItem="pI7-Re-lNB" secondAttribute="top" id="Le4-tv-0zi"/>
+                            <constraint firstItem="o3c-Nc-Xit" firstAttribute="leading" secondItem="VVj-XW-aLJ" secondAttribute="leading" id="WiK-UR-gFd"/>
+                            <constraint firstItem="pI7-Re-lNB" firstAttribute="trailing" secondItem="VVj-XW-aLJ" secondAttribute="trailing" id="YQz-tI-IKx"/>
+                            <constraint firstItem="o3c-Nc-Xit" firstAttribute="top" secondItem="pI7-Re-lNB" secondAttribute="bottom" id="dN3-XH-0fl"/>
+                            <constraint firstItem="pI7-Re-lNB" firstAttribute="leading" secondItem="VVj-XW-aLJ" secondAttribute="leading" id="qEp-b1-88t"/>
+                            <constraint firstItem="VVj-XW-aLJ" firstAttribute="trailing" secondItem="o3c-Nc-Xit" secondAttribute="trailing" id="sNW-gG-wwc"/>
+                            <constraint firstItem="VVj-XW-aLJ" firstAttribute="bottom" secondItem="o3c-Nc-Xit" secondAttribute="bottom" id="w9t-Pr-ERy"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="VVj-XW-aLJ"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Ipk-HT-dLW">
+                        <barButtonItem key="rightBarButtonItem" id="6xm-VM-Yef">
+                            <connections>
+                                <action selector="addToMainBarItemTapped:" destination="g88-DE-06v" id="Om0-w8-JMo"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="addToMainBarItem" destination="6xm-VM-Yef" id="Pqw-FZ-yEz"/>
+                        <outlet property="collectionView" destination="o3c-Nc-Xit" id="83i-9A-JBJ"/>
+                        <outlet property="weatherWidget" destination="pI7-Re-lNB" id="zQG-2A-Kag"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6E9-4P-E9P" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1445.5999999999999" y="107.49625187406298"/>
+        </scene>
+    </scenes>
+</document>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CityWeatherWidget" customModule="WeatherAppTask" customModuleProvider="target">
+            <connections>
+                <outlet property="cityTitleLabel" destination="0vJ-HQ-oyw" id="Jr2-gj-FB9"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="448" height="67"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A4N-D4-75I">
+                    <rect key="frame" x="0.0" y="0.0" width="448" height="67"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="location" translatesAutoresizingMaskIntoConstraints="NO" id="fF4-0B-yOb">
+                            <rect key="frame" x="16" y="17.5" width="32" height="32"/>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0vJ-HQ-oyw">
+                            <rect key="frame" x="64" y="16" width="368" height="35"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="0vJ-HQ-oyw" secondAttribute="trailing" constant="16" id="FHD-v6-goi"/>
+                        <constraint firstItem="fF4-0B-yOb" firstAttribute="leading" secondItem="A4N-D4-75I" secondAttribute="leading" constant="16" id="UHd-jI-tpF"/>
+                        <constraint firstItem="fF4-0B-yOb" firstAttribute="centerY" secondItem="A4N-D4-75I" secondAttribute="centerY" id="aOp-xG-a0z"/>
+                        <constraint firstItem="0vJ-HQ-oyw" firstAttribute="leading" secondItem="fF4-0B-yOb" secondAttribute="trailing" constant="16" id="heA-1o-ftV"/>
+                        <constraint firstItem="0vJ-HQ-oyw" firstAttribute="top" secondItem="A4N-D4-75I" secondAttribute="top" constant="16" id="jXD-5U-Yrh"/>
+                        <constraint firstItem="0vJ-HQ-oyw" firstAttribute="centerY" secondItem="A4N-D4-75I" secondAttribute="centerY" id="pK3-Fy-Xfj"/>
+                        <constraint firstAttribute="bottom" secondItem="0vJ-HQ-oyw" secondAttribute="bottom" constant="16" id="uRD-zC-bqU"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="A4N-D4-75I" secondAttribute="trailing" id="3nA-hr-1X4"/>
+                <constraint firstItem="A4N-D4-75I" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="FVL-ZM-MBA"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="A4N-D4-75I" secondAttribute="bottom" id="SPP-YU-GHC"/>
+                <constraint firstItem="A4N-D4-75I" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="WAy-pW-fxQ"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="-37" y="-348.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="location" width="32" height="32"/>
+    </resources>
+</document>

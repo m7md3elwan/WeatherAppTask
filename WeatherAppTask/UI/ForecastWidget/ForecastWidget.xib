@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ForecastWidget" customModule="WeatherAppTask" customModuleProvider="target">
+            <connections>
+                <outlet property="humidityLabel" destination="u0z-nZ-vfw" id="db6-i6-STO"/>
+                <outlet property="temperatureLabel" destination="z2t-Es-1Nj" id="9ZB-TH-oY3"/>
+                <outlet property="timeLabel" destination="vrY-D1-BQQ" id="ASJ-t2-K1z"/>
+                <outlet property="weatherDescriptionLabel" destination="jyp-yt-y6L" id="GyG-EZ-rP3"/>
+                <outlet property="weatherLogoImageView" destination="14J-pc-4Fp" id="MLx-jZ-PkY"/>
+                <outlet property="windSpeedLabel" destination="Ca0-Up-gmy" id="0hM-cT-ynv"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="204" height="245"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="rXf-MS-8Ko">
+                    <rect key="frame" x="16" y="16" width="172" height="213"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tro-9X-PHh">
+                            <rect key="frame" x="0.0" y="0.0" width="172" height="19.5"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="3:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vrY-D1-BQQ">
+                                    <rect key="frame" x="0.0" y="0.0" width="151.5" height="19.5"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="55" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z2t-Es-1Nj">
+                                    <rect key="frame" x="151.5" y="0.0" width="20.5" height="19.5"/>
+                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                        </stackView>
+                        <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="200" verticalHuggingPriority="200" image="Error" translatesAutoresizingMaskIntoConstraints="NO" id="14J-pc-4Fp">
+                            <rect key="frame" x="0.0" y="27.5" width="172" height="30"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="y37-hW-orr"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="weather desc" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jyp-yt-y6L">
+                            <rect key="frame" x="0.0" y="65.5" width="172" height="96.5"/>
+                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="SDy-DY-2qY">
+                            <rect key="frame" x="0.0" y="170" width="172" height="43"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ca0-Up-gmy">
+                                    <rect key="frame" x="0.0" y="0.0" width="172" height="20.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u0z-nZ-vfw">
+                                    <rect key="frame" x="0.0" y="22.5" width="172" height="20.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" red="0.2834388316" green="0.76437360050000003" blue="0.84907656909999996" alpha="0.11017765410958905" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="rXf-MS-8Ko" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="3Iv-Ix-Z0e"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="rXf-MS-8Ko" secondAttribute="bottom" constant="16" id="Ht6-Pn-4dk"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="rXf-MS-8Ko" secondAttribute="trailing" constant="16" id="aPq-FW-SwO"/>
+                <constraint firstItem="rXf-MS-8Ko" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="16" id="hOa-f6-h7Y"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="-371" y="-197.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="Error" width="64" height="64"/>
+    </resources>
+</document>
