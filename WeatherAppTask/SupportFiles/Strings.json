@@ -1,0 +1,20 @@
+{
+    "contentStrings": {
+        "wind" : "Wind",
+        "humidity" : "Humidity",
+        "technicalDifficulties" : "Technical difficulties",
+        "technicalDifficultiesError" : "Technical difficulties",
+        "weatherApiServerError" : "Technical difficulties",
+        "genericError" : "Technical difficulties",
+        "NA" : "N/A",
+        "WeatherMainActivity_Title" : "Main Activity",
+        "Loading" : "Loading...",
+        "PleaseWait" : "Please wait a bit",
+        "Error" : "Error",
+        "ServerError" : "We are facing some technical difficulties",
+        "NoInternet" : "No Internet connection",
+        "NoResults" : "No results",
+        "NoResultsDescription" : "Try Again later",
+        "NoMainActivityResultsDescription" : "You can add new cities by searching from search bar"
+    }
+}
