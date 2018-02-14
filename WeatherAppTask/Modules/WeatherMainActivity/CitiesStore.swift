@@ -11,6 +11,11 @@ import CoreLocation
 
 class CitiesStore: Cachable {
     
+    // MARK: Constants
+    struct constants {
+        static var maxNumberOfMainCities = 5
+    }
+    
     // MARK: Properties
     private var defaultCity: City {
         let defaultCity = City(id: 2643743, name: "London", country: "GB")
@@ -29,6 +34,19 @@ class CitiesStore: Cachable {
     func loadDefaultCity (){
         cities.removeAll()
         cities.append(defaultCity)
+    }
+
+    func addToMainActivities(city: City) -> Bool {
+        if mainCities.count < constants.maxNumberOfMainCities {
+           city.isMain = true
+            return true
+        } else {
+            return false
+        }
+    }
+    
+    func removeFromMainActivities(city: City)  {
+        city.isMain = false
     }
     
     func add(city: City) {

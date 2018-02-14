@@ -14,7 +14,7 @@ struct DayForeCast {
     var foreCasts: [Forecast]
 }
 
-class WeatherForecastViewController: UIViewController {
+class WeatherForecastViewController: BaseViewController {
     
     struct constants {
         static var cellReuseIdentifier = "ForecastCollectionViewCell"
@@ -77,7 +77,13 @@ class WeatherForecastViewController: UIViewController {
     // MARK:- Methods
     // MARK: Actions
     @IBAction func addToMainBarItemTapped(_ sender: UIBarButtonItem) {
-        city.isMain = !city.isMain
+        if !city.isMain {
+            if !CitiesStore.shared.addToMainActivities(city: city) {
+                showAlert(viewController: self.topNonPresentingViewController(), title: "Error".localized, message: "ReachedMaximumCities".localized, actionTitle: "OK".localized)
+            }
+        } else {
+            CitiesStore.shared.removeFromMainActivities(city: city)
+        }
         configureAddToMainActivityActionBarItem()
     }
     // MARK: Public methods

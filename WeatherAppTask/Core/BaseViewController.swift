@@ -9,13 +9,14 @@
 import UIKit
 
 class BaseViewController: UIViewController {
-
-    func showAlert(title: String,
+    
+    func showAlert(viewController: UIViewController?,
+                   title: String,
                    message: String,
                    actionTitle: String,
-                   cancelTitle: String,
-                   actionHandler:(()->Void)?,
-                   cancelHandler:(()->Void)? ) {
+                   cancelTitle: String? = nil,
+                   actionHandler:(()->Void)? = nil,
+                   cancelHandler:(()->Void)? = nil) {
         
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         
@@ -23,13 +24,16 @@ class BaseViewController: UIViewController {
             actionHandler?()
         }
         
-        let cancelAction = UIAlertAction(title: cancelTitle, style: .cancel) { (action) in
-            cancelHandler?()
+        alert.addAction(okAction)
+        
+        if cancelTitle != nil {
+            let cancelAction = UIAlertAction(title: cancelTitle, style: .cancel) { (action) in
+                cancelHandler?()
+            }
+            
+            alert.addAction(cancelAction)
         }
         
-        alert.addAction(okAction)
-        alert.addAction(cancelAction)
-        
-        self.present(alert, animated: true, completion: nil)
+        viewController?.present(alert, animated: true, completion: nil)
     }
 }

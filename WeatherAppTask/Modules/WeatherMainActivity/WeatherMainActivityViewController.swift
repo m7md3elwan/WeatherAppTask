@@ -13,7 +13,7 @@ enum WeatherMainActivityViewControllerViewState {
     case showingSearchResults(viewState:ViewState)
 }
 
-class WeatherMainActivityViewController: UIViewController {
+class WeatherMainActivityViewController: BaseViewController {
     
     // MARK:- Properties
     var searchController: UISearchController!
@@ -171,14 +171,16 @@ extension WeatherMainActivityViewController: UITableViewDataSource {
         
         if actionedCity.isMain == true {
             let deleteAction = UITableViewRowAction(style: .normal, title: "Delete") { [weak self] (rowAction, indexPath) in
-                actionedCity.isMain = false
+                CitiesStore.shared.removeFromMainActivities(city: actionedCity)
                 self?.reloadMainCities()
             }
             deleteAction.backgroundColor = .red
             return [deleteAction]
         } else {
             let addAction = UITableViewRowAction(style: .normal, title: "Add") {[weak self] (rowAction, indexPath) in
-                actionedCity.isMain = true
+                if !CitiesStore.shared.addToMainActivities(city: actionedCity) {
+                    self?.showAlert(viewController: self?.topNonPresentingViewController(),title: "Error".localized, message: "ReachedMaximumCities".localized, actionTitle: "OK".localized)
+                }
                 self?.reloadMainCities()
             }
             addAction.backgroundColor = .blue
@@ -196,9 +198,16 @@ extension WeatherMainActivityViewController: UITableViewDelegate {
         case .showingSearchResults(_):
             showWeatherForecastViewController(with: searchResults[indexPath.row])
         }
-        
     }
 }
+
+// MARK:- UISearchControllerDelegate
+extension WeatherMainActivityViewController: UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        searchController.searchBar.resignFirstResponder()
+    }
+}
+
 
 // MARK:- UISearchControllerDelegate
 extension WeatherMainActivityViewController: UISearchControllerDelegate {
