@@ -12,7 +12,8 @@ target 'WeatherAppTask' do
   
   target 'WeatherAppTaskTests' do
     inherit! :search_paths
-    # Pods for testing
+    pod 'Quick'
+    pod 'Nimble'
   end
 
   target 'WeatherAppTaskUITests' do
